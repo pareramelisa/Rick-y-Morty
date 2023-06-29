@@ -1,8 +1,9 @@
-import Card from "./Card/card";
+import Card from '../Card/Card.jsx'
+import style from "./cards.module.css"
 
 export default function Cards(props) {
 
-   return <div>{props.characters.map((character) => {
+   return <div className={style.container}>{props.characters.map((character) => {
       return <Card
          key={character.id}
          id={character.id}

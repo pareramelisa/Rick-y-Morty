@@ -1,0 +1,31 @@
+
+.cardContainer{
+    background-color: grey;
+
+    padding: 40px;
+    position: relative;
+    margin: 15px;
+}
+
+.name{
+    font-size: 25px;
+}
+
+.item{
+    font-size: 15px;
+
+}
+
+.image{
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+.boton{
+    background-color: grey;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
