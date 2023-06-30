@@ -1,18 +1,25 @@
 
 .cardContainer{
-    background-color: grey;
-
+    background-color: rgba(22, 192, 149, 0.568);
     padding: 40px;
+    margin: 40px;
     position: relative;
-    margin: 15px;
+    min-width: 235px;
+    border: 20px;
+    border-radius: 20px;
+   box-shadow: 30px;
 }
 
 .name{
+    background-color: #4bd8ae;
     font-size: 25px;
+    border-radius: 10px;
+    
 }
 
 .item{
     font-size: 15px;
+    font-family: sans-serif;
 
 }
 
@@ -22,10 +29,26 @@
     border-radius: 15px;
 }
 
-.boton{
-    background-color: grey;
+.btn {
+    background: #b10303;
+    background-image: url("http://res.freestockphotos.biz/pictures/15/15107-illustration-of-a-red-close-button-pv.png");
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    padding: 15px;
+    width: 5px;
+    border-radius: 900px;
+    height: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
     position: absolute;
     right: 0;
     top: 0;
-    
-}
+   }
+   
+   .btn:hover
+   {
+    width: 75px;
+    height: 75px;
+   }
