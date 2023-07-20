@@ -1,29 +1,33 @@
-.containerSearchBar{
-    margin-left: 70%;
+.nav{
+    background-color: aqua;
+    padding: 20px;
+   
+    
+ 
+    
 }
 
-.input{
-    border-radius: 10px;
-    height: 25px;
-    width: 200px;
+.about{
+    margin: 2px;
 }
 
 .button {
 	box-shadow:inset 0px 0px 0px 0px #affac0;
 	background:linear-gradient(to bottom, #ffff14 5%, #03edb2 100%);
 	background-color:#ffff14;
-	border-radius:8px;
+	border-radius:11px;
 	border:1px solid #aced1f;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:13px;
+	font-size:15px;
 	font-weight:bold;
-	padding:3px 16px;
+	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #0099c7;
-    margin-left: 20px;
+    float: left;
+    margin-left: 70px;
 }
 .button:hover {
 	background:linear-gradient(to bottom, #03edb2 5%, #ffff14 100%);

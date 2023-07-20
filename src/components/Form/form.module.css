@@ -1,0 +1,76 @@
+.contenedor{
+    background-image: url(./FONDOLOGIN.png);
+    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(116, 9, 138, 0.623);
+    width: 25vw;
+    height: 30vw;
+    border-radius: 15px;
+    box-shadow: 9px 9px 20px 0px #1b1919
+}
+
+
+
+.contentLogin{
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 15px;
+    width: 17vw;
+    height: 5vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    /* box-shadow: 9px 9px 10px 0px #2e2e2e */
+}
+
+.textLogin{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    text-shadow: 5px 2px 7px #807A7A;
+
+}
+
+.inputs{
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.myButton {
+	background-color:#b22de7;
+	border-radius:17px;
+	border:1px solid #a829e3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:13px;
+	padding:12px 21px;
+	text-decoration:none;
+	text-shadow:0px 0px 5px #eb3bc8;
+    box-shadow: 2px 2px 15px 0px #2e2e2e
+}
+.myButton:hover {
+	background-color:#bd2a7d;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
