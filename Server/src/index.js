@@ -1,10 +1,14 @@
 const express = require('express')
+const routes = require('./routes/index')
+
 const server = express()
 const PORT = 3001
-const router = require('./routes/index')
 
-server.use(express.json()) //middelware que parsea la ifno a json para q el server la pueda leer
+//Configuracion que parsea la ifno a json para q el server la pueda leer
+server.use(express.json()) 
 
+
+//Configuracion de lops headers de las peticiones
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -19,10 +23,10 @@ server.use((req, res, next) => {
     next();
 });
 
-server.use('/rickandmorty', router)
+server.use('/rickandmorty', routes)
 
 server.listen(PORT, () => {
-    console.log('Server raised in port:' + PORT)
+    console.log('http://localhost:' + PORT + "/rickandmorty/")
 })
 
 module.exports = {

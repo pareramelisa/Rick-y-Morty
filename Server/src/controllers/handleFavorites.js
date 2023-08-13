@@ -12,10 +12,10 @@ const postFav = (req, res) => {
 }
 
 const deleteFav = (req, res) => { // fijate que este todo igual escrito en client y server, en las rutas del localhost 
-    
+
     const { id } = req.params
 
-    const myFavorites = myFavorites.filter((favorite) => favorite.id !== +id)
+    myFavorites = myFavorites.filter((favorite) => favorite.id !== +id)
 
     return res.status(200).json(myFavorites)
 
