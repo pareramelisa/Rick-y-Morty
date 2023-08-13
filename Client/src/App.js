@@ -15,66 +15,64 @@ function App() {
    const [access, setAccess] = useState(false)
    const location = useLocation()
    const navigate = useNavigate()
-   const EMAIL = "pareralucenamelisa@gmail.com"
-   const PASSWORD = "Vadis1223."
+
    const onClose = (id) => {
-      setCharacters(characters.filter((characters) => characters.id !== id))
+      setCharacters(characters.filter((characters) => characters.id !== Number(id)))
    }
 
    async function onSearch(id) {
-      try {
-         const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      const characterAlreadySearched = characters.filter((character) => character.id === Number(id))
+      console.log(characterAlreadySearched)
+      if (characterAlreadySearched.length === 0) {
+         try {
+            const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
 
-         if (data.name){
-            setCharacters((oldChars) => [...oldChars, data]);
+            if (data.name) {
+               setCharacters((oldChars) => [...oldChars, data]);
+            }
+
+         } catch (error) {
+            alert('¡No hay personajes con este ID!')
+
          }
-
-      } catch (error) {
-         alert('¡No hay personajes con este ID!')
-
+      } else {
+         alert("Ya se busco ese personaje")
       }
    }
 
    async function login(userData) {
-
-      try{
+      try {
          const { email, password } = userData
          const { data } = await axios(URL + `?email=${email}&password=${password}`)
          const { access } = data;
 
-         setAccess(data);
+         setAccess(access);
          access && navigate('/home');
 
-      } catch(error){
+      } catch (error) {
          console.log(error.message)
       }
    }
-   
-   // function login(userData){ //esta funcion sirve para confirmar q la data q llega de los inputs sea igual que las variables que declaramos aca a modo de "base de datos"
-   //    if(userData.password === PASSWORD && userData.email === EMAIL){
-   //       setAccess(true) //si las dos condiciones se cumplen se setea el estado de acceso como verdadero, q habilita la pagina de home con el hook navigate 
-   //       navigate("/home")
-   //    }
-   // }
+
 
    useEffect(() => {
+
       !access && navigate('/')
-   }, [access])
-   
+
+   }, [access, navigate])
+
    return (
       <div className='App'>
-         {location.pathname !=='/' && <Nav onSearch={onSearch}/>}
+         {location.pathname !== '/' && <Nav onSearch={onSearch} />}
          <Routes>
-            <Route path='/' element={<Form login={login} /> } />
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />
-            <Route path='/about' element={<About />}/>
-            <Route path='/detail/:id' element={<Detail/>} />
-            <Route path='/favorites' element={<Favorites />}/>
+            <Route path='/' element={<Form login={login} />} />
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/detail/:id' element={<Detail />} />
+            <Route path='/favorites' element={<Favorites />} />
          </Routes>
       </div>
    );
 }
 
 export default App;
-
-//LOGOUT Y QUE SE RENDERICEN EL DETALLE DE LA CARD FILTRADO X ID EN EL DETAIL Y ESTILOS 
