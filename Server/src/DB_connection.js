@@ -30,4 +30,9 @@ const { User, Favorite } = database.models
 User.belongsToMany(Favorite, {through: "UserFavorite"})
 Favorite.belongsToMany(User, {through: "UserFavorite"})
 
-module.exports = database
+module.exports = {
+   database,
+   User,
+   Favorite
+}
+

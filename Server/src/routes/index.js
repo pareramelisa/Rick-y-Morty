@@ -1,6 +1,8 @@
-const { getCharById } = require('../controllers/getCharById')
-const { login } = require('../controllers/login')
-const { postFav, deleteFav } = require('../controllers/handleFavorites')
+const getCharById = require('../controllers/getCharById')
+const login = require('../controllers/login')
+const postFav = require('../controllers/postFav')
+const postUser = require('../controllers/postUser')
+const deleteFav = require('../controllers/deleteFav')
 
 const router = require('express').Router() //junta las rutas, paquete de rutas 
 
@@ -12,6 +14,8 @@ router.get('/character/:id', (req, res) => { // /rickandmorty
 
 /* Es lo mismo que pasarle req y res express lo hace solo */
 router.get('/login', login)
+
+router.post('/login', postUser)
 
 
 router.post('/fav', (req, res) => {

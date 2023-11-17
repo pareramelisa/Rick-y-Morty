@@ -31,6 +31,4 @@ const getCharById = async (req, res) => {//se crea una fn con los parametros (ob
     
 }
 
-module.exports = {
-getCharById
-}
+module.exports = getCharById

@@ -7,17 +7,16 @@ module.exports = (sequelize) => {
          type: DataTypes.INTEGER,
          autoIncrement: true,
          primaryKey: true,
+         allowNull: false,
       },
       email: {
-         type: DataTypes.STRING(40),
+         type: DataTypes.STRING,
          allowNull: false,
-         unique: true,
+         isEmail: true,
       },
       password: {
-         type: DataTypes.STRING(64),
-         validate: {
-            is: /^[0-9a-f]{64}$/i
-         }      
+         type: DataTypes.STRING,
+         allowNull: false,     
       }
    }, { timestamps: false });
 };

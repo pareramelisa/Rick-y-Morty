@@ -17,8 +17,14 @@ const postFav = async (req, res) => {
         species,
         gender,
       },
-    });
-  } catch (error) {}
+    })
+
+    const allFavorites = await Favorite.findAll()
+    return res.status(200).json(allFavorites)
+
+  } catch (error) {
+    return res.status(500).json({error: error.message})
+  }
 };
 
-module.exports = postFav;
+module.exports = postFav
